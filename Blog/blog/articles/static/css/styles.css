@@ -1,0 +1,20 @@
+.all-items-title {
+    color: black;
+    text-align: center;
+    margin: 40px;
+    background-color: green;
+    border: 4px dashed crimson;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+img {
+    border-radius: 40px;
+}
+body {
+    background-color: white;
+}
+.book-table {
+    margin-top: 40px;
+}

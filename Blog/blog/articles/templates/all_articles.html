@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}All articles{% endblock %}
+{% block content %}
+<h1 class="all-items-title">All articles</h1>
+<div class="img-container">
+    <img alt='article' src="https://images.pexels.com/photos/63694/pexels-photo-63694.jpeg?cs=srgb&dl=pexels-stephen-niemeier-63694.jpg&fm=jpg" width="500">
+</div>
+    <table class="article-table table table-striped table-hover">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for article in context.articles %}
+        <tr>
+            <th scope="row">{{ article.id }}</th>
+            <td><a target="_blank" href={% url'article' article_id=article.id %}>{{ article.name }}</a></td>
+            <td>{{ book.author_name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

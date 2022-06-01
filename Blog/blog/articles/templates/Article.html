@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{ context.article.name }}{% endblock %}
+{% block content %}
+    <div class="card center-card" style="width: 18rem;">
+        <ul class="list-group list-group-flush center-card">
+            <li class="list-group-item">Name: {{ context.article.name }}</li>
+            <li class="list-group-item">Author: {{ context.article.author_name}}</li>
+        </ul>
+    </div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ context.form }}
+    <input type="submit" value="Submit">
+</form>
+    <table class="article-table table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Text</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for review in context.reviews %}
+            <tr>
+                <th scope="row">{{ review.id }}</th>
+                <td>{{ review.text }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
