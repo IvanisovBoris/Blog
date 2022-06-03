@@ -3,11 +3,11 @@
 {% block content %}
     <div class="card center-card" style="width: 18rem;">
         <ul class="list-group list-group-flush center-card">
-            <li class="list-group-item">Name: {{ context.article.name }}</li>
-            <li class="list-group-item">Author: {{ context.article.author_name}}</li>
+            <li class="list-group-item">Name: {{ context.article.title }}</li>
+            <li class="list-group-item">Author: {{ context.article.author}}</li>
         </ul>
     </div>
-
+<p>{{ context.article.body }}</p>
 <form method="post">
     {% csrf_token %}
     {{ context.form }}

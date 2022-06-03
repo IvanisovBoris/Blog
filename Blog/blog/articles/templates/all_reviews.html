@@ -18,7 +18,7 @@
         <tr>
             <th scope="row">{{ review.id }}</th>
             <td>{{ review.text }}</td>
-            <td><a target="_blank" href={% url 'article' article_id=review.article.id %}>{{ review.article.name }}</a></td>
+            <td><a target="_blank" href={% url 'article' article_id=review.article.id %}>{{ review.article }}</a></td>
         </tr>
     {% endfor %}
     </tbody>

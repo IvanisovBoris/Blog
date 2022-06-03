@@ -17,8 +17,8 @@
     {% for article in context.articles %}
         <tr>
             <th scope="row">{{ article.id }}</th>
-            <td><a target="_blank" href={% url'article' article_id=article.id %}>{{ article.name }}</a></td>
-            <td>{{ book.author_name }}</td>
+            <td><a target="_blank" href={% url 'article' article_id=article.id %}> {{ article.title }}</a></td>
+            <td>{{ article.author }}</td>
         </tr>
     {% endfor %}
     </tbody>
